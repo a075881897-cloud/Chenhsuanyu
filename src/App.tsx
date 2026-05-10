@@ -7,7 +7,8 @@ import {
 } from 'lucide-react';
 
 const PROFILE_LINK = "https://drive.google.com/file/d/10lrx8OVicC0Jr-lOQd6esyhhwCNHRMOK/view?usp=sharing";
-const PROFILE_IMAGE_URL = "https://lh3.googleusercontent.com/d/10lrx8OVicC0Jr-lOQd6esyhhwCNHRMOK";
+// 使用 images.weserv.nl 代理來確保 Google Drive 圖片能正確顯示，解決紅色叉叉問題
+const PROFILE_IMAGE_URL = "https://images.weserv.nl/?url=https://drive.google.com/uc?id=10lrx8OVicC0Jr-lOQd6esyhhwCNHRMOK";
 
 const projects = [
   {
