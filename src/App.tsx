@@ -314,7 +314,8 @@ export default function App() {
                 { zh: "進階滅火", en: "Advanced Fire Fighting" },
                 { zh: "基礎訓練", en: "Basic Safety Training" },
                 { zh: "油輪與化學輪貨物操作基本訓練", en: "Basic Training for Tanker Cargo Operations" },
-                { zh: "保全職責", en: "Designated Security Duties" }
+                { zh: "保全職責", en: "Designated Security Duties" },
+                { zh: "APRA", en: "APRA" }
               ].map((cert, idx) => (
                 <li key={idx} className="flex gap-4">
                   <div className="mt-1.5 flex-shrink-0">
