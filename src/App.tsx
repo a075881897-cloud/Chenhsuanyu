@@ -5,10 +5,9 @@ import {
   GraduationCap, Award, BookOpen, ExternalLink, User, 
   MapPin, Calendar, Languages, MonitorDot, Coffee
 } from 'lucide-react';
-import profileImg from './profile.jpg';
 
 const PROFILE_LINK = "https://drive.google.com/file/d/10lrx8OVicC0Jr-lOQd6esyhhwCNHRMOK/view?usp=sharing";
-const PROFILE_IMAGE_URL = profileImg;
+const PROFILE_IMAGE_URL = "https://lh3.googleusercontent.com/d/10lrx8OVicC0Jr-lOQd6esyhhwCNHRMOK";
 
 const projects = [
   {
