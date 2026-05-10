@@ -6,12 +6,14 @@ import {
   MapPin, Calendar, Languages, MonitorDot, Coffee
 } from 'lucide-react';
 
+const PROFILE_IMAGE_URL = "https://lh3.googleusercontent.com/d/10lrx8OVicC0Jr-lOQd6esyhhwCNHRMOK";
+
 const projects = [
   {
     id: 1,
     title: "清明連假旅行規劃 Word",
     date: "2026/03/09",
-    url: "https://drive.google.com/file/d/1fw7qdT_L0XICJ4XfZJIBkCbmwjwD1-i/view",
+    url: "https://drive.google.com/file/d/1fw7qdT-_L0XICJ4XfZJIBkCbmwjwD1-i/view",
     icon: FileText,
     color: "text-blue-600",
     bgColor: "bg-blue-100"
@@ -103,8 +105,12 @@ export default function App() {
             className="flex flex-col md:flex-row items-center md:items-start gap-8"
           >
             {/* Avatar Placeholder */}
-            <div className="w-40 h-40 rounded-sm bg-[#111] border border-white/10 flex items-center justify-center overflow-hidden flex-shrink-0 shadow-xl">
-              <User size={64} className="text-[#BF9B30]/50" />
+            <div className="w-40 h-40 rounded-sm bg-[#111] border border-white/10 flex items-center justify-center overflow-hidden flex-shrink-0 shadow-xl relative group">
+              {PROFILE_IMAGE_URL ? (
+                <img src={PROFILE_IMAGE_URL} alt="Profile" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+              ) : (
+                <User size={64} className="text-[#BF9B30]/50" />
+              )}
             </div>
             
             <div className="flex-1 text-center md:text-left space-y-4">
@@ -193,7 +199,7 @@ export default function App() {
                 <div className="absolute -left-[28.5px] top-1.5 h-2 w-2 rounded-full bg-[#BF9B30] shadow-[0_0_8px_rgba(191,155,48,0.6)]" />
                 <div className="flex flex-col mb-2">
                   <span className="text-[10px] font-mono text-[#BF9B30] uppercase tracking-widest mb-1">2024-07 - 現在</span>
-                  <h3 className="font-serif text-2xl font-semibold text-white">六合小吃飲料店</h3>
+                  <h3 className="font-serif text-2xl font-semibold text-white">六合小玲</h3>
                   <span className="text-gray-500 text-xs tracking-widest uppercase mt-1">服務業</span>
                 </div>
                 <ul className="list-none text-gray-400 space-y-3 mt-4 text-sm font-light">
