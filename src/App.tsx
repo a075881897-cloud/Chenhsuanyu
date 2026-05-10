@@ -58,7 +58,7 @@ const projects = [
     id: 6,
     title: "清明連假 PPT",
     date: "2026/04/05",
-    url: "https://drive.google.com/file/d/1iWbri1niIekE2YaWTMw3Mcjfak9uSmPO/view",
+    url: "https://docs.google.com/presentation/d/1iWbri1niIekE2YaWTMw3Mcjfak9uSmPO/edit?slide=id.p3#slide=id.p3",
     icon: Presentation,
     color: "text-orange-600",
     bgColor: "bg-orange-100"
@@ -105,11 +105,11 @@ export default function App() {
             className="flex flex-col md:flex-row items-center md:items-start gap-8"
           >
             {/* Avatar Placeholder */}
-            <div className="w-40 h-40 rounded-sm bg-[#111] border border-white/10 flex items-center justify-center overflow-hidden flex-shrink-0 shadow-xl relative group">
+            <div className="w-32 h-32 rounded-sm bg-[#111] border border-white/10 flex items-center justify-center overflow-hidden flex-shrink-0 shadow-xl relative group">
               {PROFILE_IMAGE_URL ? (
                 <img src={PROFILE_IMAGE_URL} alt="Profile" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
               ) : (
-                <User size={64} className="text-[#BF9B30]/50" />
+                <User size={48} className="text-[#BF9B30]/50" />
               )}
             </div>
             
@@ -141,7 +141,7 @@ export default function App() {
       <main className="max-w-5xl mx-auto px-6 lg:px-12 -mt-12 relative z-20 pb-24">
         
         {/* Projects / 影片與學期作業 (Target Links Section) */}
-        <Section title="學期作業 & 影片資訊" icon={BookOpen}>
+        <Section title="學期作業" icon={BookOpen}>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {projects.map((project, index) => (
               <motion.a
