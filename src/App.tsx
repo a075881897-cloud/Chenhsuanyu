@@ -7,7 +7,7 @@ import {
 } from 'lucide-react';
 
 const PROFILE_LINK = "https://drive.google.com/file/d/10lrx8OVicC0Jr-lOQd6esyhhwCNHRMOK/view?usp=sharing";
-const PROFILE_IMAGE_URL = "/profile.jpg";
+const PROFILE_IMAGE_URL = "./profile.jpg";
 
 const projects = [
   {
