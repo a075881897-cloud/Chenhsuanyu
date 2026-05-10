@@ -6,7 +6,8 @@ import {
   MapPin, Calendar, Languages, MonitorDot, Coffee
 } from 'lucide-react';
 
-const PROFILE_IMAGE_URL = "https://lh3.googleusercontent.com/d/10lrx8OVicC0Jr-lOQd6esyhhwCNHRMOK";
+const PROFILE_LINK = "https://drive.google.com/file/d/10lrx8OVicC0Jr-lOQd6esyhhwCNHRMOK/view?usp=sharing";
+const PROFILE_IMAGE_URL = "/profile.jpg";
 
 const projects = [
   {
@@ -105,13 +106,13 @@ export default function App() {
             className="flex flex-col md:flex-row items-center md:items-start gap-8"
           >
             {/* Avatar Placeholder */}
-            <div className="w-32 h-32 rounded-sm bg-[#111] border border-white/10 flex items-center justify-center overflow-hidden flex-shrink-0 shadow-xl relative group">
+            <a href={PROFILE_LINK} target="_blank" rel="noopener noreferrer" className="w-32 h-32 rounded-sm bg-[#111] border border-white/10 flex items-center justify-center overflow-hidden flex-shrink-0 shadow-xl relative group hover:border-[#BF9B30]/50 transition-colors">
               {PROFILE_IMAGE_URL ? (
-                <img src={PROFILE_IMAGE_URL} alt="Profile" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                <img src={PROFILE_IMAGE_URL} alt="Profile" className="w-full h-full object-cover group-hover:opacity-80 transition-opacity" referrerPolicy="no-referrer" />
               ) : (
                 <User size={48} className="text-[#BF9B30]/50" />
               )}
-            </div>
+            </a>
             
             <div className="flex-1 text-center md:text-left space-y-4">
               <h1 className="font-serif text-5xl md:text-6xl font-semibold tracking-wide">陳宣諭 <span className="text-[#BF9B30] font-medium ml-2 font-sans text-3xl md:text-4xl">HSUAN YU CHEN</span></h1>
@@ -333,8 +334,8 @@ export default function App() {
 
         {/* Autobiography */}
         <Section title="自傳" icon={User}>
-          <div className="max-w-none text-gray-400 space-y-8 leading-loose text-justify font-light text-sm tracking-wide mt-6">
-            <p className="first-letter:font-serif first-letter:text-6xl first-letter:text-[#BF9B30] first-letter:mr-3 first-letter:float-left first-letter:leading-[0.8] mt-2">
+          <div className="max-w-none text-gray-400 space-y-6 leading-relaxed text-justify font-normal text-base tracking-wide mt-6">
+            <p className="mt-2">
               我目前就讀國立高雄科技大學五專部四年級，在一個氣氛很輕鬆的家庭長大，跟家人相處比較像朋友，很多事情都可以直接說出來討論，而不是用責罵的方式解決，也因為這樣，我習慣先聽別人的想法，再慢慢說出自己的意見，遇到問題時，比起衝動反應，我會先想一想再行動。
             </p>
             <p>
