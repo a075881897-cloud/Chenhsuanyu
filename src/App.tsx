@@ -7,8 +7,7 @@ import {
 } from 'lucide-react';
 
 const PROFILE_LINK = "https://drive.google.com/file/d/10lrx8OVicC0Jr-lOQd6esyhhwCNHRMOK/view?usp=sharing";
-// 使用 images.weserv.nl 代理來確保 Google Drive 圖片能正確顯示，解決紅色叉叉問題
-const PROFILE_IMAGE_URL = "https://images.weserv.nl/?url=https://drive.google.com/uc?id=10lrx8OVicC0Jr-lOQd6esyhhwCNHRMOK";
+const PROFILE_IMAGE_URL = "https://drive.google.com/thumbnail?id=10lrx8OVicC0Jr-lOQd6esyhhwCNHRMOK&sz=w1000";
 
 const projects = [
   {
@@ -94,6 +93,24 @@ const Section = ({ title, icon: Icon, children }: { title: string, icon: any, ch
   </motion.section>
 );
 
+const ProfileImage = ({ url }: { url: string }) => {
+  const [error, setError] = React.useState(false);
+
+  if (error || !url) {
+    return <User size={48} className="text-[#BF9B30]/50" />;
+  }
+
+  return (
+    <img 
+      src={url} 
+      alt="Profile" 
+      className="w-full h-full object-cover group-hover:opacity-80 transition-opacity" 
+      referrerPolicy="no-referrer"
+      onError={() => setError(true)}
+    />
+  );
+};
+
 export default function App() {
   return (
     <div className="min-h-screen bg-[#0A0A0A] text-[#E5E5E5] font-sans selection:bg-[#BF9B30]/30 selection:text-white">
@@ -108,11 +125,7 @@ export default function App() {
           >
             {/* Avatar Placeholder */}
             <a href={PROFILE_LINK} target="_blank" rel="noopener noreferrer" className="w-32 h-32 rounded-sm bg-[#111] border border-white/10 flex items-center justify-center overflow-hidden flex-shrink-0 shadow-xl relative group hover:border-[#BF9B30]/50 transition-colors">
-              {PROFILE_IMAGE_URL ? (
-                <img src={PROFILE_IMAGE_URL} alt="Profile" className="w-full h-full object-cover group-hover:opacity-80 transition-opacity" referrerPolicy="no-referrer" />
-              ) : (
-                <User size={48} className="text-[#BF9B30]/50" />
-              )}
+              <ProfileImage url={PROFILE_IMAGE_URL} />
             </a>
             
             <div className="flex-1 text-center md:text-left space-y-4">
